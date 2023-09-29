@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 export const cartInitialState = getCartInitialState()
 
 function getCartInitialState() {
@@ -32,7 +31,7 @@ interface CartState extends Array<Product> {}
 
 export interface Action {
     type: string;
-    payload: any;
+    payload: Product;
 }
 
 export const updateLocalStorage = (state: CartState) => {

@@ -1,8 +1,17 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useReducer, createContext } from 'react'
 import { cartReducer, cartInitialState, Action } from '../reducers/cart'
 
-export const CartContext = createContext<any>(null)
+
+interface CartContextType {
+        cart: typeof cartInitialState;
+        addToCart: (product: Product) => void;
+        removeFromCart: (product: Product) => void;
+        deleteToCart: (product: Product) => void;
+        clearCart: () => void;
+      }
+
+
+export const CartContext = createContext<CartContextType | undefined>(undefined)
 
 interface Product {
         id: number;
